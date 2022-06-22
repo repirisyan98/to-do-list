@@ -29,7 +29,7 @@ class NewTask extends React.Component {
                     <input type={"checkbox"} onClick={this.handleClick}></input>
                 </div>
                 <div>
-                    <input type={"text"} onChange={this.handleChange} value={this.state.text} placeholder="Add new Task ...." className="border-none bg-transparent"></input>
+                    <input type={"text"} onChange={this.handleChange} value={this.state.text} placeholder="Add new Task ...." className="bg-transparent focus:border-none focus:border-transparent focus:ring-0"></input>
                 </div>
             </div>
         );
