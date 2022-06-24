@@ -18,7 +18,7 @@ class Task extends React.Component {
             this.props.deleteItem(newItems);
         } else {
             let newItem = this.props.items;
-            newItem[e].value.text = e.target.value;
+            newItem[index].value.text = e.target.value;
             this.props.editItem(newItem)
         }
     }
