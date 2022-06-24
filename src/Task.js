@@ -2,23 +2,23 @@ import React from "react";
 
 class Task extends React.Component {
 
-    completeItem = (e, index) => {
-        let newItems = this.props.items && this.props.items.filter((element, i) => i !== e);
+    completeItem = (index, e) => {
+        let newItems = this.props.items && this.props.items.filter((element, i) => i !== index);
         this.props.completeItem(newItems);
     }
 
-    deleteItem = (e, index) => {
-        let newItems = this.props.items && this.props.items.filter((element, i) => i !== e);
+    deleteItem = (index, e) => {
+        let newItems = this.props.items && this.props.items.filter((element, i) => i !== index);
         this.props.deleteItem(newItems);
     }
 
-    editItem = (e, index) => {
+    editItem = (index, e) => {
         if (index.target.value == '') {
-            let newItems = this.props.items && this.props.items.filter((element, i) => i !== e);
+            let newItems = this.props.items && this.props.items.filter((element, i) => i !== index);
             this.props.deleteItem(newItems);
         } else {
             let newItem = this.props.items;
-            newItem[e].value.text = index.target.value;
+            newItem[e].value.text = e.target.value;
             this.props.editItem(newItem)
         }
     }
